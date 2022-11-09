@@ -6,8 +6,8 @@ from collections.abc import Mapping
 from functools import cached_property
 from typing import List, Tuple
 import httpx
-from utils import _decamelize_dict
-from exceptions import SwitchBotException
+from switchbot.utils import _decamelize_dict
+from switchbot.exceptions import SwitchBotException
 
 
 class SwitchBot(httpx.AsyncClient):

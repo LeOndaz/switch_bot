@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name="switch_bot",
+    name="switchbot",
     version="1.0",
     author="LeOndaz",
     author_email="ahmeddark369@gmail.com",
