@@ -1,6 +1,7 @@
-from switchbot.client import SwitchBot, SwitchBotException
-from switchbot.utils import is_hub
+from switchbot.client import SwitchBot
+from switchbot.exceptions import SwitchBotException
 
 __all__ = (
-    "SwitchBot", "SwitchBotException", "is_hub"
+    "SwitchBot",
+    "SwitchBotException",
 )

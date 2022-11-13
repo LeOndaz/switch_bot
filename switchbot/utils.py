@@ -1,7 +1,9 @@
+import re
 from collections.abc import Mapping
+
 from humps import decamelize
 
-_twelve_zeros = "".join([str(0) for i in range(12)])  # 12 zeros
+titled_words = re.compile("[A-Z][a-z0-9]*")
 
 
 def _decamelize_dict(obj: Mapping):
@@ -18,14 +20,6 @@ def _decamelize_dict(obj: Mapping):
     return new_obj
 
 
-def is_hub(device):
-    if isinstance(device, Mapping):
-        value = device.get("hub_device_id")
-
-        if value:
-            return value == _twelve_zeros
-
-    elif hasattr(device, "hub_device_id"):
-        return getattr(device, "hub_device_id") == _twelve_zeros
-
-    raise TypeError(f"{device} is not a valid device")
+def pascalise_name(name):
+    matches = titled_words.findall(name)
+    return " ".join(matches)
